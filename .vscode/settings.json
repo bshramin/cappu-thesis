@@ -1,0 +1,12 @@
+{
+  "saveAndRun": {
+    "commands": [
+      {
+        "match": ".tex",
+        "cmd": "xelatex main.tex",
+        "useShortcut": false,
+        "silent": false
+      }
+    ]
+  }
+}
