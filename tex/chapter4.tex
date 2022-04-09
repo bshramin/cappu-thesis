@@ -125,3 +125,127 @@
 \end{figure}
 
 % ------------ Section 4.3
+\section{دیپلوی قرارداد روی شبکه تستی Ropsten}
+تا اینجا قراردادهوشمند نوشته و تست شده است، در این مرحله روی شبکه تستی Ropsten دیپلوی می‌شود. فرآیند دیپلوی شدن کاپو به کمک فریمورک ترافل قدم به قدم شرح داده می‌شود.
+
+\subsection{یافتن آدرس یکی از نود‌های شبکه برای ارسال تراکنش دیپلوی قرارداد به آن}
+آدرس نود‌های یک شبکه بلاکچین همه به صورت عمومی در دسترس هستند زیرا نودها باید بتوانند یکدیگر را ببینند. راه‌های زیادی برای به دست آوردن آدرس یک نود وجود دارد. یکی از آسان‌ترین راه‌های به دست آوردن آدرس یکی از نود‌های شبکه مراجعه به وبسایت ماینر است. برای این پروژه از وبسایت Moralis
+\LTRfootnote{
+  \url{https://moralis.io}
+}
+برای پیدا کردن آدرس نود شبکه استفاده شد.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{moralis.png}}
+\caption{دریافت آدرس یکی از نود‌های شبکه از وبسایت Moralis}
+\label{fig:moralis}
+\end{figure}
+
+\subsection{اضافه شدن اطلاعات شبکه مورد نظر به تنظیمات ترافل}
+هنگامی که به کمک دستور
+\lr{truffle init}
+یک پروژه ترافل ساخته می‌شود، فایلی با نام truffle-config.js ساخته می‌شود. تنظیمات مربوط به ترافل در این فایل نوشته شده‌است. برای این که ترافل شبکه مورد نظر را بشناسد باید اطلاعات آن شبکه در این فایل نوشته و شبکه‌ی جدیدی تعریف شود. برای تعریف شبکه از آدرسی که در گام قبل به دست آمد استفاده می‌شود و مانند تصویر زیر شبکه‌ی جدیدی تعریف می‌شود.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{network-config.png}}
+\caption{اضافه کردن شبکه Ropsten به شبکه‌های ترافل}
+\label{fig:network-config}
+\end{figure}
+
+
+\subsection{آماده شدن mnemonics}
+برای انجام این پروژه به کمک دستور
+\lr{npm mnemonics}
+یک آدرس تستی ساخته می‌شود. این دستور، mnemonics متناسب با این آدرس را به عنوان خروجی می‌دهد. دقت کنید که برای دیپلوی روی
+\gls{Mainnet}
+حتما باید از mnemonics مربوط به یک کیف پول واقعی استفاده شود و اطلاعات ان در اختیار کسی قرار نگیرد.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{mnemonics.png}}
+\caption{ایجاد mnemonics تستی}
+\label{fig:mnemonics}
+\end{figure}
+
+
+\subsection{استفاده از کیف پول ایجاد شده در تنظیمات ترافل}
+ترافل برای این که بتواند از کیف‌پول برای انجام تراکنش‌ها استفاده کند باید به mnemonics یا کلید خصوصی آن دسترسی داشته باشد. به این منظور فایلی با نام secrets.json در دایرکتوری اصلی برنامه ساخته می‌شود و mnemonics کیف پول به شکل زیر در آن قرار داده می‌شود.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{mnemonics-in-secrets.png}}
+\caption{قراردادن mnemonics در فایل secrets.json}
+\label{fig:mnemonics-in-secrets}
+\end{figure}
+
+سپس در تنظیمات ترافل باید ذکر شود که می‌تواند آدرس کیف‌پول را در این آدرس پیدا کند.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{secrets-in-config.png}}
+\caption{معرفی فایل secrets.json در تنظیمات ترافل}
+\label{fig:secrets-in-config}
+\end{figure}
+
+
+\subsection{نصب کیف‌پول hdwallet}
+ترافل برای استفاده از mnemonics کیف پول ما نیاز به نصب پکیج hdwallet-provider دارد، این پکیج کاربری‌های یک کیف پول دیجیتال از جمله امضا و ارسال تراکنش بر روی شبکه بلاکچین را در اختیار ترافل قرار می‌دهد. این پکیج با اجرای دستور
+\lr{npm install –save-dev @truffle/hdwallet-provider}
+نصب می‌شود.  پس از نصب کیف پول در تنظیمات ترافل در فایل truffle-config.js ذکر می‌شود که از این کیف‌پول استفاده شود.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{wallet-in-config.png}}
+\caption{استفاده از کیف‌پول hdwallet در تنظیمات ترافل}
+\label{fig:wallet-in-config}
+\end{figure}
+
+
+\subsection{انتخاب شبکه اضافه شده}
+حال هنگام ورود به خط فرمان ترافل مانند تصویر زیر شبکه مورد نظر انتخاب می‌شود.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{truffle-console.png}}
+\caption{ورود به خط فرمان ترافل با انتخاب شبکه Ropsten}
+\label{fig:truffle-console}
+\end{figure}
+
+
+\subsection{بررسی آدرس کیف‌پول و موجودی آن}
+برای دیپلوی یک قرارداد هوشمند باید آدرس دیپلوی کننده آن بتواند هزینه تراکنش دیپلوی را پرداخت کند. در صورتی که دیپلوی بر روی یک شبکه تستی انجام می‌شود باید با استفاده از یک faucet روی شبکه تستی به میزان کافی پول تستی دریافت شود.
+
+برای دریافت آدرس‌های کیف‌پول از دستور زیر در خط فرمان ترافل استفاده می شود.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{get-addresses.png}}
+\caption{دریافت آدرس‌های کیف‌پول در خط فرمان ترافل}
+\label{fig:get-addresses}
+\end{figure}
+
+برای دریافت مانده حساب آدرس، دستور زیر در خط فرمان ترافل اجرا می‌شود.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{get-wallet-balance.png}}
+\caption{دریافت موجودی کیف‌پول در خط فرمان ترافل}
+\label{fig:get-wallet-balance}
+\end{figure}
+
+
+\subsection{دیپلوی قراردادهوشمند روی شبکه بلاکچین}
+پس از اطمینان از توانایی پرداخت کارمزد تراکنش با استفاده از دستور migrate در خط فرمان ترافل قراردادهوشمند روی شبکه بلاکچین دیپلوی می‌شود.
+
+
+\subsection{اطمینان از صحت دیپلوی قراردادهوشمند}
+س از اتمام دیپلوی قرارداد هوشمند برای اطمینان از به درستی انجام شدن فرآیند دیپلوی قرارداد، می‌توان از
+\glspl{Block Explorer}
+بلاکچین استفاده کرد. برای مثال قرارداد هوشمند کاپو بر روی شبکه Ropsten دیپلوی شده است، که با رفتن به وبسایت اتراسکن
+\LTRfootnote{
+\url{https://etherscan.io}
+}
+و قراردادن آن روی شبکه Ropsten می‌توان قرارداد دیپلوی شده و تراکنش‌های آن را مشاهده کرد.
+
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=12cm]{etherscan.png}}
+\caption{مشاهده قراداد کاپو در Etherscan روی شبکه Ropsten}
+\label{fig:etherscan}
+\end{figure}
+
+
+% ------------ Section 4.4
