@@ -92,7 +92,7 @@
 \ifx\@degree\undefined%
 {
 \if@mscthesis
-\degree{کارشناسی ارشد}
+\degree{کارشناسی}
 \else
 \if@bscthesis
 \degree{کارشناسی}
@@ -604,7 +604,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
     \\In partial fulfillment of the requirements for
     \\The degree of 
 	\if@mscthesis
-	 Master of Science
+	 Bachelor of Science
 	\else
 	 Doctor of Philosophy
 	\fi
