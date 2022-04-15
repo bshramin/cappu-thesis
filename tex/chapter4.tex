@@ -69,7 +69,7 @@
 متد mint به نحوی نوشته شده است که برای عموم قابل استفاده باشد. پس از محاسبه hash داده‌ی توکن از آن به عنوان شناسه توکن استفاده می‌کند، توکن را می‌سازد و متغیرهای tokenDatas و numberOfMintedTokens را بروزرسانی می‌کند.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{mint.png}}
+\centerline{\frame{\includegraphics[width=12cm]{mint.png}}}
 \caption{پیاده‌سازی تابع mint}
 \label{fig:mint}
 \end{figure}
@@ -79,7 +79,7 @@
 شده است که پس از هر انتقال توکن با بررسی آدرس‌های مبدا و مقصد، متغیر‌های numberOfTokenHolders و numberOfMintedTokens و ownerTokens را بروزرسانی کند.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{afterTokenTransfer.png}}
+\centerline{\frame{\includegraphics[width=12cm]{afterTokenTransfer.png}}}
 \caption{پیاده‌سازی تابع afterTokenTransfer}
 \label{fig:afterTokenTransfer}
 \end{figure}
@@ -87,7 +87,7 @@
 متد جدیدی با نام getUserTokens نیز نوشته شده است که در استاندارد ERC721 به صورت پیش‌فرض وجود ندارد. این متد با گرفتن یک آدرس و استفاده از ownerTokens و tokenDatas دو خروجی برمی‌گرداند، لیستی از شناسه توکن‌های آدرس و لیستی از داده‌های توکن‌های آدرس.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{getUserTokens.png}}
+\centerline{\frame{\includegraphics[width=12cm]{getUserTokens.png}}}
 \caption{پیاده‌سازی تابع getUserTokens}
 \label{fig:getUserTokens}
 \end{figure}
@@ -97,7 +97,7 @@
 از قرارداد Helper نیز ارث‌بری می‌کند.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{Helper.png}}
+\centerline{\frame{\includegraphics[width=12cm]{Helper.png}}}
 \caption{پیاده‌سازی قرارداد Helper}
 \label{fig:Helper}
 \end{figure}
@@ -109,7 +109,7 @@
 در کاپو برای هر عملکرد قرارداد تست نوشته شده است. یکی از ساده‌ترین تست‌های نوشته شده تست فرآیند ساخت یک توکن است که در آن پس از بارگذاری قرارداد با فراخوانی متد mint یک توکن ساخته می‌شود و سپس با فراخوانی متد balanceOf دارایی آدرس سازنده توکن بررسی می‌شود و انتظار می‌رود که پس از ساخت یک توکن، دارایی آدرس سازنده توکن یک باشد. این تست را می‌توان در تصویر زیر مشاهده کرد.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{mint-test.png}}
+\centerline{\frame{\includegraphics[width=12cm]{mint-test.png}}}
 \caption{نمونه یکی از تست‌های قرارداد کاپو}
 \label{fig:mint-test}
 \end{figure}
@@ -119,7 +119,7 @@
 اجرا کرد. این دستور پس از اجرای تست‌ها نتیجه و زمان اجرای هر تست را به عنوان خروجی نمایش می‌دهد. نمونه اجرای این دستور را می‌توان در تصویر زیر مشاهده کرد.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{test-output.png}}
+\centerline{\frame{\includegraphics[width=12cm]{test-output.png}}}
 \caption{نمونه خروجی اجرای تست‌های قرارداد}
 \label{fig:test-output}
 \end{figure}
@@ -136,7 +136,7 @@
 برای پیدا کردن آدرس نود شبکه استفاده شد.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{moralis.png}}
+\centerline{\frame{\includegraphics[width=12cm]{moralis.png}}}
 \caption{دریافت آدرس یکی از نود‌های شبکه از وبسایت Moralis}
 \label{fig:moralis}
 \end{figure}
@@ -147,13 +147,13 @@
 یک پروژه ترافل ساخته می‌شود، فایلی با نام truffle-config.js ساخته می‌شود. تنظیمات مربوط به ترافل در این فایل نوشته شده‌است. برای این که ترافل شبکه مورد نظر را بشناسد باید اطلاعات آن شبکه در این فایل نوشته و شبکه‌ی جدیدی تعریف شود. برای تعریف شبکه از آدرسی که در گام قبل به دست آمد استفاده می‌شود و مانند تصویر زیر شبکه‌ی جدیدی تعریف می‌شود.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{network-config.png}}
+\centerline{\frame{\includegraphics[width=12cm]{network-config.png}}}
 \caption{اضافه کردن شبکه راپستن به شبکه‌های ترافل}
 \label{fig:network-config}
 \end{figure}
 
 
-\subsection{آماده شدن \gls{mnemonics}}
+\subsection{آماده شدن \gls{Mnemonics}}
 برای انجام این پروژه به کمک دستور
 \lr{npm نمونیکز}
 یک آدرس تستی ساخته می‌شود. این دستور، نمونیکز متناسب با این آدرس را به عنوان خروجی می‌دهد. دقت کنید که برای بارگذاری روی
@@ -161,9 +161,9 @@
 حتما باید از نمونیکز مربوط به یک کیف پول واقعی استفاده شود و اطلاعات ان در اختیار کسی قرار نگیرد.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{نمونیکز.png}}
+\centerline{\frame{\includegraphics[width=12cm]{mnemonics.png}}}
 \caption{ایجاد نمونیکز تستی}
-\label{fig:نمونیکز}
+\label{fig:mnemonics}
 \end{figure}
 
 
@@ -171,7 +171,7 @@
 ترافل برای این که بتواند از کیف‌پول برای انجام تراکنش‌ها استفاده کند باید به نمونیکز یا کلید خصوصی آن دسترسی داشته باشد. به این منظور فایلی با نام secrets.json در دایرکتوری اصلی برنامه ساخته می‌شود و نمونیکز کیف پول به شکل زیر در آن قرار داده می‌شود.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{mnemonics-in-secrets.png}}
+\centerline{\frame{\includegraphics[width=12cm]{mnemonics-in-secrets.png}}}
 \caption{قراردادن نمونیکز در فایل secrets.json}
 \label{fig:mnemonics-in-secrets}
 \end{figure}
@@ -179,7 +179,7 @@
 سپس در تنظیمات ترافل باید ذکر شود که می‌تواند آدرس کیف‌پول را در این آدرس پیدا کند.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{secrets-in-config.png}}
+\centerline{\frame{\includegraphics[width=12cm]{secrets-in-config.png}}}
 \caption{معرفی فایل secrets.json در تنظیمات ترافل}
 \label{fig:secrets-in-config}
 \end{figure}
@@ -191,7 +191,7 @@
 نصب می‌شود.  پس از نصب کیف پول در تنظیمات ترافل در فایل truffle-config.js ذکر می‌شود که از این کیف‌پول استفاده شود.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{wallet-in-config.png}}
+\centerline{\frame{\includegraphics[width=12cm]{wallet-in-config.png}}}
 \caption{استفاده از کیف‌پول hdwallet در تنظیمات ترافل}
 \label{fig:wallet-in-config}
 \end{figure}
@@ -201,7 +201,7 @@
 حال هنگام ورود به خط فرمان ترافل مانند تصویر زیر شبکه مورد نظر انتخاب می‌شود.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{truffle-console.png}}
+\centerline{\frame{\includegraphics[width=12cm]{truffle-console.png}}}
 \caption{ورود به خط فرمان ترافل با انتخاب شبکه راپستن}
 \label{fig:truffle-console}
 \end{figure}
@@ -213,7 +213,7 @@
 برای دریافت آدرس‌های کیف‌پول از دستور زیر در خط فرمان ترافل استفاده می شود.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{get-addresses.png}}
+\centerline{\frame{\includegraphics[width=12cm]{get-addresses.png}}}
 \caption{دریافت آدرس‌های کیف‌پول در خط فرمان ترافل}
 \label{fig:get-addresses}
 \end{figure}
@@ -221,7 +221,7 @@
 برای دریافت مانده حساب آدرس، دستور زیر در خط فرمان ترافل اجرا می‌شود.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{get-wallet-balance.png}}
+\centerline{\frame{\includegraphics[width=12cm]{get-wallet-balance.png}}}
 \caption{دریافت موجودی کیف‌پول در خط فرمان ترافل}
 \label{fig:get-wallet-balance}
 \end{figure}
@@ -242,7 +242,7 @@
 
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=12cm]{etherscan.png}}
+\centerline{\frame{\includegraphics[width=12cm]{etherscan.png}}}
 \caption{مشاهده قراداد کاپو در Etherscan روی شبکه راپستن}
 \label{fig:etherscan}
 \end{figure}
