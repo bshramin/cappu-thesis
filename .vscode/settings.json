@@ -3,7 +3,7 @@
     "commands": [
       {
         "match": ".tex",
-        "cmd": "latexmk -bibtex -pdf main.tex",
+        "cmd": "latexmk -bibtex -f -pdf main.tex",
         "useShortcut": false,
         "silent": false
       }
