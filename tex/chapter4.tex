@@ -450,8 +450,8 @@
 \ref{fig:cappu-wrong-network-error}
 به کاربر هشدار می‌دهد که شبکه‌ی کیف پول را تغییر دهد.
 
-\begin{figure}
-\centerline{\frame{\includegraphics[width=14cm]{cappu-wrong-network-error.png}}}
+\begin{figure}[H]
+\centerline{\frame{\includegraphics[width=12cm]{cappu-wrong-network-error.png}}}
 \caption{پیام کاپو به کاربر هنگامی که کیف پول روی شبکه مورد نظر نباشد.}
 \label{fig:cappu-wrong-network-error}
 \end{figure}
@@ -472,6 +472,134 @@
 هنگامی که تراکنش‌ها در حالت
 \gls{Pending}
 هستند و نمایش پیام‌های مناسب با توجه به نتیجه تراکنش‌های کاربر.
+
+در این قسمت روند تعامل یک کاربر با کاپو مورد بررسی قرار می‌گیرد.
+هنگامی که کاربر برنامه کاپو را باز می‌کند و هنوز کیف پولش را متصل نکرده است،
+مانند تصویر
+\ref{fig:homepage-not-loggedin}
+توضیحاتی در مورد نحوه عملکرد کاپو
+و همچنین آماری از تعداد توکن‌های ساخته شده و تعداد آدرس‌های دارای نوکن را مشاهده می‌کند.
+کاربر هنوز گزینه‌هایی مانند ساخت توکن یا لیست توکن‌ها را نمی‌بیند زیرا به آن‌ها دسترسی ندارد.
+پس از اتصال کیف‌پول کاربر  به کاپو گزینه‌های ساخت توکن و لیست توکن‌ها مانند تصویر
+\ref{fig:homepage-loggedin}
+به صفحه اضافه می‌شوند.
+
+\begin{figure}
+\centerline{\frame{\includegraphics[width=12cm]{homepage-not-loggedin.png}}}
+\caption{صفحه اصلی کاپو (بدون کیف پول متصل).}
+\label{fig:homepage-not-loggedin}
+\end{figure}
+
+\begin{figure}
+\centerline{\frame{\includegraphics[width=12cm]{homepage-loggedin.png}}}
+\caption{صفحه اصلی کاپو (با کیف پول متصل).}
+\label{fig:homepage-loggedin}
+\end{figure}
+
+حال کاربر که کیف پول خود را به کاپو متصل کرده است می‌تواند توکن بسازد.
+برای این منظور از قسمت بالای صفحه گزینه
+\lr{Mint}
+را انتاخب می‌کند.
+در صفحه‌ای که باز می‌شود اطلاعات توکن را وارد کرده و دکمه
+\lr{Mint}
+را می‌زند.
+حال کاپو تراکنش ساخت توکن را به کیف پول کاربر می‌فرستد که توسط کاربر تایید و روی شبکه ارسال شود.
+تا زمانی که نتیجه‌ی تراکنش مشخص نشده است کاپو مانند تصویر
+\ref{fig:mint-loading}
+پیام انتظار به کاربر نمایش می‌دهد.
+سپس در صورت موفقیت آمیز بودن ساخت توکن، مانند تصویر
+\ref{fig:mint-success}
+پیام مناسب به کاربر نمایش داده می‌شود.
+
+\begin{figure}
+\centerline{\frame{\includegraphics[width=12cm]{mint-loading.png}}}
+\caption{کاپو در حال ساخت توکن.}
+\label{fig:mint-loading}
+\end{figure}
+
+\begin{figure}
+\centerline{\frame{\includegraphics[width=12cm]{mint-success.png}}}
+\caption{پیام موفقیت در ساخت توکن.}
+\label{fig:mint-success}
+\end{figure}
+
+پس از ساخت یک یا چند توکن، کاربر می‌تواند با انتخاب گزینه
+\lr{My Tokens}
+یه صفحه لیست توکن‌ها منتقل شود.
+در این قسمت کاربر می‌تواند دارایی‌هایش را مشاهده کند.
+در صورتی که کاربر دارای توکنی نباشد پیام مناسب مانند تصویر
+\ref{fig:no-tokens-yet}
+به کاربر نمایش داده می‌شود.
+در صورتی که کاربر توکن‌هایی داشته باشد نیز مانند تصویر
+\ref{fig:tokens-list}
+لیست توکن‌هایش را مشاهده می‌کند.
+
+
+\begin{figure}
+\centerline{\frame{\includegraphics[width=12cm]{no-tokens-yet.png}}}
+\caption{کاربر توکنی ندارد.}
+\label{fig:no-tokens-yet}
+\end{figure}
+
+\begin{figure}
+\centerline{\frame{\includegraphics[width=12cm]{tokens-list.png}}}
+\caption{لیست توکن‌های کاربر.}
+\label{fig:tokens-list}
+\end{figure}
+
+در این صفحه کاربر می‌تواند هر یک از توکن‌ها را با انتخاب دکمه
+\lr{Transfer}
+به شخص دیگری ارسال کند.
+با انتخاب گزینه انتقال توکن،
+صفحه‌ی کوچکی مانند تصویر
+\ref{fig:transfer-modal}
+باز می‌شود که کاربر میتواند در آن آدرس مقصد را وارد کرده و توکن را ارسال کند.
+پس از فشردن دکمه انتقال، مانند تصویر
+\ref{fig:transfer-loading}
+پیام انتظار به کاربر نمابش داده می‌شود.
+در صورت موفق بودن انتقال کاربر مانند تصویر
+\ref{fig:transfer-success}
+پیام موفقیت را مشاهده می‌کند.
+همچنین اگر تراکنش با مشکلی مواجه شود نیز پیام مناسب مانند تصویر
+\ref{fig:transfer-error}
+به کاربر نمایش داده می شود.
+
+\begin{figure}[H]
+\centerline{\frame{\includegraphics[width=12cm]{transfer-modal.png}}}
+\caption{صفحه ورود آدرس مقصد و انتقال توکن.}
+\label{fig:transfer-modal}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\frame{\includegraphics[width=12cm]{transfer-loading.png}}}
+\caption{در حال ارسال توکن.}
+\label{fig:transfer-loading}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\frame{\includegraphics[width=12cm]{transfer-success.png}}}
+\caption{ارسال موفق توکن.}
+\label{fig:transfer-success}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\frame{\includegraphics[width=12cm]{transfer-error.png}}}
+\caption{ارسال توکن با مشکل مواجه شده.}
+\label{fig:transfer-error}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{بارگذاری واسط‌کاربری}
