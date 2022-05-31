@@ -384,21 +384,21 @@
 \arabic{davaranCounter} & استاد مشاور & \@secondadvisor & \@secondadvisorrank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \fi
 \hline
-\ifx\@internaljudge\undefined%
-\else \stepcounter{davaranCounter}
-\arabic{davaranCounter} & استاد داور داخلی & \@internaljudge & \@internaljudgerank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
-\hline
-\fi
-\ifx\@externaljudge\undefined%
-\else \stepcounter{davaranCounter}
-\arabic{davaranCounter} & استاد مدعو & \@externaljudge & \@externaljudgerank & \@externaljudgeuniversity & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
-\hline
-\fi
-\ifx\@graduatedeputy\undefined%
-\else \stepcounter{davaranCounter}
-\arabic{davaranCounter} & نمایندهٔ تحصیلات تکمیلی دانشکده & \@graduatedeputy & \@graduatedeputyrank &  دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
-\hline
-\fi
+% \ifx\@internaljudge\undefined%
+% \else \stepcounter{davaranCounter}
+% \arabic{davaranCounter} & استاد داور داخلی & \@internaljudge & \@internaljudgerank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
+% \hline
+% \fi
+% \ifx\@externaljudge\undefined%
+% \else \stepcounter{davaranCounter}
+% \arabic{davaranCounter} & استاد مدعو & \@externaljudge & \@externaljudgerank & \@externaljudgeuniversity & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
+% \hline
+% \fi
+% \ifx\@graduatedeputy\undefined%
+% \else \stepcounter{davaranCounter}
+% \arabic{davaranCounter} & نمایندهٔ تحصیلات تکمیلی دانشکده & \@graduatedeputy & \@graduatedeputyrank &  دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
+% \hline
+% \fi
 \end{tabular}
 \end{onehalfspacing}
 \end{table}
